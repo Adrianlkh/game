@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pika Volley Beach Arcade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            pixel: ['"Press Start 2P"', 'monospace'],
+            sans: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            pika: {
+              yellow: '#FDCB02',
+              darkYellow: '#E5A900',
+              red: '#FF2A2A',
+              brown: '#8B4513',
+              electric: '#00F0FF',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Retro CRT scanline effect */
+    .crt-overlay::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+      background-size: 100% 4px;
+      z-index: 20;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+    /* Subtle curved screen glow */
+    .crt-glow {
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.6), 0 0 25px rgba(253, 203, 2, 0.2);
+    }
+    body {
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+  </style>
+  </head>
+<body class="bg-slate-950 text-white min-h-screen overflow-x-hidden select-none">
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.js"></script></body>
+</html>
